@@ -52,7 +52,7 @@ function criarBotaoVoltar() {
     // Adiciona estilo para posicionar o botão como flutuante
     voltarButton.style.position = 'fixed';
     voltarButton.style.bottom = '25px';
-    voltarButton.style.left = '25px';
+    voltarButton.style.left = '9rem';
     voltarButton.style.zIndex = '1000';
 
     // voltarButton.onclick = voltar; // Chama a função voltar quando clicado
