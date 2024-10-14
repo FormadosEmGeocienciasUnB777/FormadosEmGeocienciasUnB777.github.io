@@ -49,7 +49,7 @@ dados.forEach(item => {
 
         // Cria um botão para cada item do JSON
         const button = document.createElement('button');
-        button.className = 'btn btn-primary m-4 btn-lg '; // Classe Bootstrap para estilização básica
+        button.className = 'btn btn-primary m-4 btn-lg h1 custom-btn'; // Classe Bootstrap para estilização básica
         button.textContent = capitalizeW(item.curso.trim());  // Aplicando a função de capitalização
         button.id = curso;
 

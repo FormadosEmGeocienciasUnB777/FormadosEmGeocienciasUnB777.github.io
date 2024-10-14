@@ -16,7 +16,7 @@ fetch('./json/dados.json')
         //
 
         //
-        const h2curso = document.createElement('h2');
+        const h2curso = document.createElement('h1');
         h2curso.className = 'text-center';
         h2curso.id = 'cursoHeader'; // Adiciona um ID para fácil seleção
         h2curso.textContent = `Curso de Graduação em ${cursoSelecionado}`;
@@ -28,6 +28,7 @@ fetch('./json/dados.json')
 
         // Adicionando o botão de "Voltar" flutuante
         criarBotaoVoltar()
+        criarBotaoVoltarAoTopo()
 
     })
     .catch(error => {
@@ -139,7 +140,7 @@ function criarBotoesAno(anos) {
 
         // Cria um botão para cada ano de formatura
         const button = document.createElement('button');
-        button.className = 'btn btn-primary btn-lg m-2'; // Classe Bootstrap para estilização básica
+        button.className = 'btn btn-primary btn-lg m-2 custom-btn'; // Classe Bootstrap para estilização básica
         button.textContent = `${ano}`;  // Texto do botão
         button.id = `${ano}`;
 
@@ -197,3 +198,46 @@ function ajustarTamanhoBotoes() {
         });
     }
 }
+
+function criarBotaoVoltarAoTopo(){
+    // Criar o botão
+    const voltarAoTop = document.createElement('button');
+    voltarAoTop.id = 'btnVoltarTopo';
+    voltarAoTop.className = 'btn btn-primary';
+    voltarAoTop.title = "Voltar ao topo";
+    voltarAoTop.innerHTML = '&#8679; Topo';
+
+    // Estilizar o botão dinamicamente
+    voltarAoTop.style.position = 'fixed';
+    voltarAoTop.style.bottom = '20px';
+    voltarAoTop.style.right = '30px';
+    voltarAoTop.style.display = 'none';
+    voltarAoTop.style.zIndex = '99';
+    voltarAoTop.style.border = 'none';
+    voltarAoTop.style.outline = 'none';
+    voltarAoTop.style.cursor = 'pointer';
+    voltarAoTop.style.padding = '15px';
+    voltarAoTop.style.borderRadius = '50px';
+    // voltarAoTop.style.backgroundColor = '#007bff';
+    voltarAoTop.style.backgroundColor = '#203258';
+    voltarAoTop.style.color = 'white';
+
+    // Adicionar o botão ao body
+    document.body.appendChild(voltarAoTop);
+
+    // Mostrar o botão quando a página for rolada
+    window.onscroll = function(){
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20){
+            voltarAoTop.style.display = 'block'; // Mostrar o botão
+        } else {
+            voltarAoTop.style.display = 'none'; // Esconder o botão
+        }
+    };
+
+    // Quando o botão for clicado, voltar ao topo suavemente
+    voltarAoTop.onclick = function(){
+        window.scrollTo({ top:0, behavior: 'smooth'});
+    };
+
+}
+

@@ -173,7 +173,7 @@ function carregarAlunos(anoSelecionado) {
             // Adicionando agora titulo
             const cursoSelecionado1 = sessionStorage.getItem('cursoSelecionado');
             const cursoSelecionadoElement1 = document.getElementById('fetching1');
-            const h2curso1 = document.createElement('h2');
+            const h2curso1 = document.createElement('h1');
             h2curso1.className = 'text-center';
             h2curso1.id = 'cursoHeader'; // Adiciona um ID para fácil seleção
             h2curso1.textContent = `Formados em ${cursoSelecionado1} ${anoSelecionado}/1 e ${anoSelecionado}/2`;
@@ -198,7 +198,7 @@ function carregarAlunos(anoSelecionado) {
             });
 
             //Primeira tabela
-            let alunosHTMLTable = '<table class="list-group-item text-center d-inline-flex border-0">';
+            let alunosHTMLTable = '<table class="list-group-item text-center d-inline-flex border-0 h2">';
             alunosHTMLTable += '<thead>';
             alunosHTMLTable += '<tr>';
             // alunosHTMLTable += '<td>';
@@ -214,7 +214,7 @@ function carregarAlunos(anoSelecionado) {
 
             alunosHTMLTable += '<tbody>';
             alunosHTMLTable += '<tr>';
-            alunosHTMLTable += `<th class="list-group-item border-0 h3" colspan="4">${formacao}:</th>`;
+            alunosHTMLTable += `<th class="list-group-item border-0" colspan="4">${formacao}:</th>`;
             alunosHTMLTable += '</tr>';
 
             alunosDoAno.forEach(aluno => {
